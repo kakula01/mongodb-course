@@ -8,28 +8,28 @@ MongoClient.connect('mongodb://localhost:27017/TodoApi',(err, db)=>{
 	}
 		console.log('connected to MongoDB server');
 
-		// db.collection('TodoApp').insertOne({
-		// 	name:'keerthi',
-		// 	age:28,
-		// 	completed:false
-		// },(err, result)=>{
-		// 	if(err){
-		// 		return console.log('Unable to connect to server',err)
-		// 	}
-
-		// 	console.log(JSON.stringify(result.ops, undefined, 2));
-		// });
-
-		db.collection('Users').insertOne({
-			name:'prajwal kumar',
-			age:2,
-			location:'India'
+		db.collection('TodoApp').insertOne({
+			name:'keerthi',
+			age:28,
+			completed:false
 		},(err, result)=>{
 			if(err){
-				return console.log('record not found',err);
+				return console.log('Unable to connect to server',err)
 			}
 
-			console.log(result.ops[0]._id.getTimestamp() )
-		})
-		db.close();
+			console.log(JSON.stringify(result.ops, undefined, 2));
+		});
+
+		// db.collection('Users').insertOne({
+		// 	name:'prajwal kumar',
+		// 	age:2,
+		// 	location:'India'
+		// },(err, result)=>{
+		// 	if(err){
+		// 		return console.log('record not found',err);
+		// 	}
+
+		// 	console.log(result.ops[0]._id.getTimestamp() )
+		// })
+		// db.close();
 })

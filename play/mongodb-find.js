@@ -9,16 +9,18 @@ MongoClient.connect('mongodb://localhost:27017/TodoApi', (err, db)=>{
 	}
 
 	console.log('connceted to Mongo server');
-	// db.collection('TodoApp').find({completed:true}).toArray().then((docs)=>{
-	// 	console.log('Todo Documents');
-	// 	console.log(JSON.stringify(docs, undefined,2));
-	// },(err)=>{
-	// 	console.log('Uable to connect to server', err);
-	// });
-	db.collection('Users').find({name:'prajwal kumar'}).toArray().then((docs)=>{
+
+	db.collection('TodoApp').find().toArray().then((docs)=>{
+		console.log('Todo Documents');
 		console.log(JSON.stringify(docs, undefined,2));
 	},(err)=>{
-		console.log('unable to get the list of DOcuments',err);
-	})
-	db.close();
+		console.log('Uable to connect to server', err);
+	});
+
+	// db.collection('Users').find({name:'prajwal kumar'}).toArray().then((docs)=>{
+	// 	console.log(JSON.stringify(docs, undefined,2));
+	// },(err)=>{
+	// 	console.log('unable to get the list of DOcuments',err);
+	// })
+	// db.close();
 })
