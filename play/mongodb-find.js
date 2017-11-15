@@ -8,7 +8,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApi', (err, db)=>{
 		return console.log('Unable to connect to server', err);
 	}
 
-	console.log('connceted to Mongo server');
+	console.log('connected to Mongo server');
 
 	db.collection('TodoApp').find().toArray().then((docs)=>{
 		console.log('Todo Documents');
